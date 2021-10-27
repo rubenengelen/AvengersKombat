@@ -10,7 +10,8 @@ CONFIG -= app_bundle
 SOURCES += \
         boss.cpp \
         main.cpp \
-        warrior.cpp
+        warrior.cpp \
+        wezen.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -21,4 +22,5 @@ HEADERS += \
     battle.h \
     boss.h \
     keuzes.h \
-    warrior.h
+    warrior.h \
+    wezen.h

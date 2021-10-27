@@ -1,6 +1,8 @@
 #include "battle.h"
+#include "boss.h"
 #include "warrior.h"
 #include "keuzes.h"
+#include "wezen.h"
 
 std::string bosskeuze(warrior& speler);
 
@@ -13,21 +15,21 @@ int main()
     case 1:
     {
         warrior player("Thor", 100, 10, 15, 20, 3); //12
-        printf("U heeft %s gekozen!\n", player.name.c_str());
+        printf("U heeft %s gekozen!\n", player.getName().c_str());
         bosskeuze(player);
     }
         break;
     case 2:
     {
         warrior player("Hulk" , 135, 12, 25, 27, 5); //12
-        printf("U heeft %s gekozen!\n", player.name.c_str());
+        printf("U heeft %s gekozen!\n", player.getName().c_str());
         bosskeuze(player);
     }
         break;
     case 3:
     {
         warrior player("Iron Man", 125, 15, 13, 24, 2); //12
-        printf("U heeft %s gekozen!\n", player.name.c_str());
+        printf("U heeft %s gekozen!\n", player.getName().c_str());
         bosskeuze(player);
     }
         break;
@@ -43,24 +45,24 @@ std::string bosskeuze(warrior& speler)
     case 1:
     {
         boss baas("Loki", 150, 10, 1); //12
-        printf("Gevecht tussen %s en %s\n", speler.name.c_str(), baas.name.c_str());
+        printf("Gevecht tussen %s en %s\n", speler.getName().c_str(), baas.getName().c_str());
         battle::startFight(speler, baas); //13
-        return baas.name;
+        return baas.getName();
         break;
     }
     case 2:
     {
         boss baas("Thanos", 180, 14, 1); //12
-        printf("Gevecht tussen %s en %s\n", speler.name.c_str(), baas.name.c_str());
+        printf("Gevecht tussen %s en %s\n", speler.getName().c_str(), baas.getName().c_str());
         battle::startFight(speler, baas); //13
-        return baas.name;
+        return baas.getName();
         break;
     }
     case 3:
         boss baas("Magneto", 120, 8, 1); //12
-        printf("Gevecht tussen %s en %s\n", speler.name.c_str(), baas.name.c_str());
+        printf("Gevecht tussen %s en %s\n", speler.getName().c_str(), baas.getName().c_str());
         battle::startFight(speler, baas); //13
-        return baas.name;
+        return baas.getName();
         break;
     }
     return "";

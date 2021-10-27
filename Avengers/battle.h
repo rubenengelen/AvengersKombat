@@ -28,19 +28,23 @@ public:
                     break;
                 }
                 //checken of de speler nog genoeg heals heeft bij juiste input
-                else if(input == "g" && warrior1.aantalHeals > 0)
+                else if(input == "g" && warrior1.getAantalHeals() > 0)
                 {
-                    warrior1.health = warrior1.health + warrior1.genezen;
-                    warrior1.aantalHeals--;
-                    printf("U heeft nog %d heals over, en uw health is %d.\n", warrior1.aantalHeals, warrior1.health);
+                    warrior1.setHealth(warrior1.getHealth(), warrior1.heal());
+                    warrior1.setAantalHeals(1);
+                    printf("U heeft nog %d heals over, en uw health is %d.\n", warrior1.getAantalHeals(), warrior1.getHealth());
                     break;
+                }
+                else if(input == "skip")
+                {
+                    warrior2.setHealth(0);
                 }
                 else
                 {
                     printf("Kan actie niet vinden, probeer opnieuw. ");
                 }
             }
-        }while(warrior1.health > 0 && warrior2.health > 0);
+        }while(warrior1.getHealth() > 0 && warrior2.getHealth() > 0);
     }
 
     //Functie om resultaat te krijgen van de aanval van de speler en boss
@@ -50,18 +54,18 @@ public:
         int warriorADamage = warriorA.attack();
         int damage2warriorB = (warriorADamage);
         damage2warriorB = (damage2warriorB <= 0)? 0:damage2warriorB;
-        warriorB.health = warriorB.health - damage2warriorB;
-        printf("%s doet %d damage aan %s\n", warriorA.name.c_str(), damage2warriorB, warriorB.name.c_str());
-        if(warriorB.health < 0)
+        warriorB.setHealth(warriorB.getHealth() - damage2warriorB);
+        printf("%s doet %d damage aan %s\n", warriorA.getName().c_str(), damage2warriorB, warriorB.getName().c_str());
+        if(warriorB.getHealth() < 0)
         {
-            printf("%s heeft nu nog 0 hp\n", warriorB.name.c_str());
+            printf("%s heeft nu nog 0 hp\n", warriorB.getName().c_str());
         }else
         {
-            printf("%s heeft nu nog %d hp\n", warriorB.name.c_str(), warriorB.health);
+            printf("%s heeft nu nog %d hp\n", warriorB.getName().c_str(), warriorB.getHealth());
         }
-        if(warriorB.health <= 0)
+        if(warriorB.getHealth() <= 0)
         {
-            printf("%s is dood, %s is gewonnen!\n", warriorB.name.c_str(), warriorA.name.c_str());
+            printf("%s is dood, %s is gewonnen!\n", warriorB.getName().c_str(), warriorA.getName().c_str());
             return 1;
         }
 
@@ -70,18 +74,18 @@ public:
         int warriorADefense = warriorA.block();
         int damage2warriorA = (warriorBDamage - warriorADefense);
         damage2warriorA = (damage2warriorA <= 0)? 0:damage2warriorA;
-        warriorA.health = warriorA.health - damage2warriorA;
-        printf("%s doet %d damage aan %s\n", warriorB.name.c_str(), damage2warriorA, warriorA.name.c_str());
-        if(warriorA.health < 0)
+        warriorA.setHealth(warriorA.getHealth() - damage2warriorA);
+        printf("%s doet %d damage aan %s\n", warriorB.getName().c_str(), damage2warriorA, warriorA.getName().c_str());
+        if(warriorA.getHealth() < 0)
         {
-            printf("%s heeft nu nog 0 hp\n", warriorA.name.c_str());
+            printf("%s heeft nu nog 0 hp\n", warriorA.getName().c_str());
         }else
         {
-            printf("%s heeft nu nog %d hp\n", warriorA.name.c_str(), warriorA.health);
+            printf("%s heeft nu nog %d hp\n", warriorA.getName().c_str(), warriorA.getHealth());
         }
-        if(warriorA.health <= 0)
+        if(warriorA.getHealth() <= 0)
         {
-            printf("%s is dood, %s is gewonnen!\n", warriorA.name.c_str(), warriorB.name.c_str());
+            printf("%s is dood, %s is gewonnen!\n", warriorA.getName().c_str(), warriorB.getName().c_str());
             return 1;
         }
         return 0;
