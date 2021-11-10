@@ -6,10 +6,10 @@
 class wezen
 {
 private:
-    int attackMax;
-    int blockMax;
+    short signed int attackMax;
+    short signed int blockMax;
     std::string name;
-    int health;
+    short signed int health;
 public:
     inline int getHealth();
     std::string getName();
