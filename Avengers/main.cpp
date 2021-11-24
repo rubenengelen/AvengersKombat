@@ -5,7 +5,7 @@
 #include "wezen.h"
 #include <fstream>
 
-std::string bosskeuze(warrior& speler);
+std::string bosskeuze(ruben::warrior& speler);
 
 int main(int argc, char *argv[])
 {
@@ -24,21 +24,21 @@ int main(int argc, char *argv[])
         {
         case 1:
         {
-            warrior player("Thor", 100, 10, 15, 20, 3); //12
+            ruben::warrior player("Thor", 100, 10, 15, 20, 3); //12
             printf("U heeft %s gekozen!\n", player.getName().c_str());
             bosskeuze(player);
         }
             break;
         case 2:
         {
-            warrior player("Hulk" , 135, 12, 25, 27, 5); //12
+            ruben::warrior player("Hulk" , 135, 12, 25, 27, 5); //12
             printf("U heeft %s gekozen!\n", player.getName().c_str());
             bosskeuze(player);
         }
             break;
         case 3:
         {
-            warrior player("Iron Man", 125, 15, 13, 24, 2); //12
+            ruben::warrior player("Iron Man", 125, 15, 13, 24, 2); //12
             printf("U heeft %s gekozen!\n", player.getName().c_str());
             bosskeuze(player);
         }
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 }
 
 //Deze functie maakt de gekozen baas aan en start het gevecht
-std::string bosskeuze(warrior& speler)
+std::string bosskeuze(ruben::warrior& speler)
 {
     switch(baas())
     {

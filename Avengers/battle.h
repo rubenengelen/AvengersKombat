@@ -10,7 +10,7 @@ class battle
 {
 public:
     //Deze functie start het gevecht tussen de speler en de boss
-    static void startFight(warrior& warrior1, boss& warrior2)
+    static void startFight(ruben::warrior& warrior1, boss& warrior2)
     {
         ofstream gamelog;
         std::string input;
@@ -59,7 +59,7 @@ public:
     }
 
     //Functie om resultaat te krijgen van de aanval van de speler en boss
-    static int getAttackResult(warrior& warriorA, boss& warriorB)
+    static int getAttackResult(ruben::warrior& warriorA, boss& warriorB)
     {
         ofstream gamelog;
         //speler die baas aanvalt

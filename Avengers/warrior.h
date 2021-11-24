@@ -2,7 +2,7 @@
 #define WARRIOR_H
 #include "wezen.h"
 
-
+namespace ruben{
 class warrior : public wezen //4
 {
 private:
@@ -18,5 +18,5 @@ public:
     warrior(); //11
     ~warrior(); //14
 };
-
+};
 #endif // WARRIOR_H
