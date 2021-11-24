@@ -2,7 +2,7 @@
 #define WEZEN_H
 #include <string>
 //8
-
+namespace ruben{
 class wezen
 {
 private:
@@ -21,8 +21,8 @@ public:
     virtual int block() = 0;
     wezen(std::string name, int health, int attackMax, int blockMax);
 };
-
-inline int wezen::getHealth()
+}
+inline int ruben::wezen::getHealth()
 {
     return this->health;
 }

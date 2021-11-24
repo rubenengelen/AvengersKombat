@@ -1,5 +1,5 @@
 #include "wezen.h"
-
+namespace ruben{
 wezen::wezen(std::string name, int health, int attackMax, int blockMax)
 {
     this->name = name;
@@ -34,3 +34,4 @@ int wezen::getBlockMax()
 {
    return this->blockMax;
 }
+};

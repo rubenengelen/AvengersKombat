@@ -1,5 +1,6 @@
 #include "boss.h"
 
+namespace ruben{
 boss::boss(std::string name, int health, int attackMax, int blockMax) : wezen(name, health, attackMax, blockMax)
 {
     this->blockMax = blockMax;
@@ -14,3 +15,4 @@ int boss::attack()
 boss::boss() : wezen("boss",10,10,10){};
 
 boss::~boss(){};
+};

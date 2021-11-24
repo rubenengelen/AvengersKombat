@@ -3,7 +3,7 @@
 #include <string>
 #include "wezen.h"
 
-
+namespace ruben{
 class boss : public wezen
 {
 private:
@@ -16,5 +16,5 @@ public:
     boss(); //11
     ~boss(); //14
 };
-
+}
 #endif // BOSS_H
