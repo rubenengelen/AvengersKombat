@@ -68,7 +68,7 @@ std::string bosskeuze(warrior& speler)
     }
     case 2:
     {
-        boss baas("Thanos", 180, 14, 1); //12
+        boss baas("Thanos", 190, 14, 1); //12
         printf("Gevecht tussen %s en %s\n", speler.getName().c_str(), baas.getName().c_str());
         battle::startFight(speler, baas); //13
         return baas.getName();
