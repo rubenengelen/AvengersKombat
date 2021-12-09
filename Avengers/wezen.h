@@ -7,9 +7,10 @@ class wezen
 {
 private:
     short signed int attackMax;
-    short signed int blockMax;
     std::string name;
     short signed int health;
+protected:
+    short signed int blockMax;
 public:
     inline int getHealth();
     std::string getName();

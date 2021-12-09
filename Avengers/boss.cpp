@@ -1,9 +1,9 @@
 #include "boss.h"
 
 namespace ruben{
-boss::boss(std::string name, int health, int attackMax, int blockMax) : wezen(name, health, attackMax, blockMax)
+boss::boss(std::string name, int health, int attackMax, int blockMax) : wezen(name, health, attackMax, 1)
 {
-    this->blockMax = blockMax;
+
 }
 
 //Functie die bepaalt hoeveel damage er gedaan wordt bij een aanval
