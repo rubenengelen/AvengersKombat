@@ -60,12 +60,12 @@ public:
     }
 
     //Functie om resultaat te krijgen van de aanval van de speler en boss
-    static int getAttackResult(warrior& warriorA, boss& warriorB)
+    static bool getAttackResult(warrior& warriorA, boss& warriorB)
     {
         ofstream gamelog;
         //speler die baas aanvalt
-        int warriorADamage = warriorA.attack();
-        int damage2warriorB = (warriorADamage);
+        short unsigned int warriorADamage = warriorA.attack();
+        short unsigned int damage2warriorB = (warriorADamage);
         damage2warriorB = (damage2warriorB <= 0)? 0:damage2warriorB;
         warriorB.setHealth(warriorB.getHealth() - damage2warriorB);
         printf("%s doet %d damage aan %s\n", warriorA.getName().c_str(), damage2warriorB, warriorB.getName().c_str());
@@ -91,13 +91,13 @@ public:
             gamelog.open ("../gamelog.txt", iostream::app);
             gamelog << warriorB.getName().c_str() << " is dood " << warriorA.getName().c_str() << " is gewonnen!\n";
             gamelog.close();
-            return 1;
+            return true;
         }
 
         //baas die speler aanvalt
-        int warriorBDamage = warriorB.attack();
-        int warriorADefense = warriorA.block();
-        int damage2warriorA = (warriorBDamage - warriorADefense);
+        short unsigned int warriorBDamage = warriorB.attack();
+        short unsigned int warriorADefense = warriorA.block();
+        short unsigned int damage2warriorA = (warriorBDamage - warriorADefense);
         damage2warriorA = (damage2warriorA <= 0)? 0:damage2warriorA;
         warriorA.setHealth(warriorA.getHealth() - damage2warriorA);
         printf("%s doet %d damage aan %s\n", warriorB.getName().c_str(), damage2warriorA, warriorA.getName().c_str());
@@ -123,9 +123,9 @@ public:
             gamelog.open ("../gamelog.txt", iostream::app);
             gamelog << warriorA.getName().c_str() << " is dood " << warriorB.getName().c_str() << " is gewonnen!\n";
             gamelog.close();
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 };
 };

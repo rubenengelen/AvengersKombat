@@ -2,13 +2,14 @@
 #define KEUZES_H
 #include <string>
 #include <iostream>
+
 using namespace std;
 
 // functie die speler zijn karakter laat kiezen
 int strijder()
 {
     std::string warriorKeuze; //26
-    int strijder;
+    int strijderKeuze;
     for(;;)
     {
         printf("U kan kiezen tussen: Thor, Hulk en Iron Man\n");
@@ -16,15 +17,15 @@ int strijder()
         getline(cin, warriorKeuze);
         if(warriorKeuze == "Thor" || warriorKeuze == "thor")
         {
-            strijder = 1;
+            strijderKeuze = 1;
             break;
         }else if(warriorKeuze == "Hulk" || warriorKeuze == "hulk")
         {
-            strijder = 2;
+            strijderKeuze = 2;
             break;
         }else if(warriorKeuze == "Iron Man" || warriorKeuze == "iron man" || warriorKeuze == "Iron man" || warriorKeuze == "iron Man")
         {
-            strijder = 3;
+            strijderKeuze = 3;
             break;
         }
         else
@@ -33,7 +34,7 @@ int strijder()
         }
     }
 
-    return strijder;
+    return strijderKeuze;
 }
 
 //Functie die speler zijn tegenstander laat kiezen

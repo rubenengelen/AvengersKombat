@@ -9,7 +9,7 @@ class boss : public wezen
 public:
     boss(std::string name, int health, int attackMax, int blockMax);
     int attack();
-    int block(){return blockMax;}
+    int block(){return 0;}
     boss(); //11
     ~boss(); //14
 };

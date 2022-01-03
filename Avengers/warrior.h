@@ -6,10 +6,10 @@ namespace ruben{
 class warrior : public wezen //4
 {
 private:
-    int genezen;
-    int aantalHeals;
+    short signed int genezen;
+    short signed int aantalHeals;
 public:
-    warrior(std::string name, int health, int attackMax, int blockMax, int genezen, int aantalHeals);
+    warrior(std::string name, int health, int attackMax, int blockMax, short signed int genezen, short signed int aantalHeals);
     int heal();
     int getAantalHeals();
     void setAantalHeals(int a);

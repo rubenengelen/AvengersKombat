@@ -2,7 +2,7 @@
 
 namespace ruben{
 //constructor
-warrior::warrior(std::string name, int health, int attackMax, int blockMax, int genezen, int aantalHeals) : wezen(name, health, attackMax, blockMax), genezen(genezen)
+warrior::warrior(std::string name, int health, int attackMax, int blockMax, short signed int genezen, short signed int aantalHeals) : wezen(name, health, attackMax, blockMax), genezen(genezen)
 {
     this->aantalHeals = aantalHeals;
 }

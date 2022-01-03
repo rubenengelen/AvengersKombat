@@ -21,6 +21,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     battle.h \
     boss.h \
+    game.h \
     keuzes.h \
     warrior.h \
     wezen.h
